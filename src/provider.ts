@@ -1,9 +1,8 @@
 // Provider routing — TypeSafe direct wins if both keys present, else OpenRouter.
-
-export type ProviderName = "typesafe" | "openrouter";
+// Both endpoints share the {state, questions} -> {answers} wire contract,
+// so a single config shape covers both.
 
 export interface ProviderConfig {
-  name: ProviderName;
   url: string;
   key: string;
   model: string;
@@ -16,10 +15,10 @@ const OPENROUTER_MODEL = "~typesafe/jev-latest";
 
 export function resolveProvider(env: Record<string, string | undefined> = process.env): ProviderConfig | null {
   if (env.TYPESAFE_API_KEY) {
-    return { name: "typesafe", url: TYPESAFE_URL, key: env.TYPESAFE_API_KEY, model: TYPESAFE_MODEL };
+    return { url: TYPESAFE_URL, key: env.TYPESAFE_API_KEY, model: TYPESAFE_MODEL };
   }
   if (env.OPENROUTER_API_KEY) {
-    return { name: "openrouter", url: OPENROUTER_URL, key: env.OPENROUTER_API_KEY, model: OPENROUTER_MODEL };
+    return { url: OPENROUTER_URL, key: env.OPENROUTER_API_KEY, model: OPENROUTER_MODEL };
   }
   return null;
 }
