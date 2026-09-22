@@ -1,6 +1,6 @@
 {
   "name": "@echohello/jev-mcp",
-  "version": "0.1.0",
+  "version": "2026.09.23",
   "description": "Minimal MCP server exposing TypeSafe/OpenRouter /api/alpha/decisions as judgment tools.",
   "type": "module",
   "bin": {

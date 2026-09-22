@@ -5,7 +5,7 @@ import { TOOLS, findTool } from "./tools.js";
 import { resolveProvider } from "./provider.js";
 import * as handlers from "./handlers.js";
 
-const SERVER_INFO = { name: "jev-mcp", version: "0.1.0" };
+const SERVER_INFO = { name: "jev-mcp", version: "2026.09.23" };
 const PROTOCOL_VERSION = "2024-11-05";
 
 interface JsonRpcRequest {
