@@ -1,0 +1,37 @@
+{
+  "name": "@echohello/jev-mcp",
+  "version": "0.1.0",
+  "description": "Minimal MCP server exposing TypeSafe/OpenRouter /api/alpha/decisions as judgment tools.",
+  "type": "module",
+  "bin": {
+    "jev-mcp": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build src/index.ts --target=node --outdir=dist --minify --external node:*",
+    "dev": "bun run src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test"
+  },
+  "license": "MIT",
+  "engines": {
+    "bun": ">=1.1"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "typesafe",
+    "jev",
+    "claude-code",
+    "opencode"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.5"
+  }
+}
